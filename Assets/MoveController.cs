@@ -29,5 +29,15 @@ public class MoveController : MonoBehaviour
         Vector3 movement = camForward * vertical + camRight * horizontal;
 
         controller.Move(movement * speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed *= 2;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed /= 2;
+        }
     }
 }
